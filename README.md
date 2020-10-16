@@ -3,7 +3,7 @@
 
 A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar with simple smooth animations, providing a nice and clean UX.
 
-| (github-assets/Screen-Recording.gif)  | 
+ ![style1](github-assets/Screen-Recording.gif)
  <img src="github-assets/Screen-Shot.png" alt="preview" width="300"/> 
 
 
