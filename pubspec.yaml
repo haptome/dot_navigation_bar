@@ -1,6 +1,6 @@
 name: dot_navigation_bar
-description: A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar with simple smooth animations, providing a nice and clean UX.
-version: 0.0.1
+description:Simple smooth animations, providing a nice and cleanUI/UX Bottom Nav Bar.
+version: 0.1.1
 # author: Haptome <haptomee@gmail.com>
 homepage: https://github.com/haptome/dot_navigation_bar
 
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  line_awesome_flutter: ^1.0.1
+  
 
 dev_dependencies:
   flutter_test:

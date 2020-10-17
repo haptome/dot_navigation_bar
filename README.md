@@ -1,7 +1,7 @@
 # Dot Navigation Bar
-![version](https://img.shields.io/badge/version-0.0.1-blue.svg) 
+![version](https://img.shields.io/badge/version-0.1.1-blue.svg) 
 
-A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar with simple smooth animations, providing a nice and clean UX.
+A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar with simple smooth animations, providing a nice and clean UI/UX.
 
  ![style1](github-assets/Screen-Recording.gif)
  <img src="github-assets/Screen-Shot.png" alt="preview" width="300"/> 
@@ -30,12 +30,15 @@ import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 Widget build(BuildContext context) {
   return Scaffold(
     body: Center(),
-    bottomNavigationBar: DotNavigationBar(
-        items: <DotNavigationBarIteam>[
-          
-        ],
-        
-      )
+    bottomNavigationBar:  DotNavigationBar(
+          currentIndex: _SelectedTab.values.indexOf(_selectedTab),
+          onTap: _handleIndexChanged,
+          dotIndicatorColor: Colors.black,
+          items: [
+            
+            
+          ],
+        ),
   );
 }
 ```
@@ -48,19 +51,37 @@ Widget build(BuildContext context) {
       body: Container(
         child: Image.asset("assets/IMG.png"),
       ),
-      bottomNavigationBar: DotNavigationBar(
-        items: <DotNavigationBarIteam>[
-          DotNavigationBarIteam(icon: LineAwesomeIcons.home, onTap: () {}),
-          DotNavigationBarIteam(icon: LineAwesomeIcons.safari, onTap: () {}),
-          DotNavigationBarIteam(icon: LineAwesomeIcons.briefcase, onTap: () {}),
-          DotNavigationBarIteam(icon: LineAwesomeIcons.user, onTap: () {}),
-        ],
-        color: Colors.grey.withOpacity(0.5),
-        activeColor: Colors.green[200],
-        dotColor: Colors.green,
-        backgroundShadowColor: Colors.green[200],
-        
-      ),
+      bottomNavigationBar:  DotNavigationBar(
+          currentIndex: _SelectedTab.values.indexOf(_selectedTab),
+          onTap: _handleIndexChanged,
+          // dotIndicatorColor: Colors.black,
+          items: [
+            /// Home
+            DotNavigationBarItem(
+              icon: Icon(Icons.home),
+              selectedColor: Colors.purple,
+            ),
+
+            /// Likes
+            DotNavigationBarItem(
+              icon: Icon(Icons.favorite_border),
+              selectedColor: Colors.pink,
+            ),
+
+            /// Search
+            DotNavigationBarItem(
+              icon: Icon(Icons.search),
+              selectedColor: Colors.orange,
+            ),
+
+            /// Profile
+            DotNavigationBarItem(
+              icon: Icon(Icons.person),
+              selectedColor: Colors.teal,
+            ),
+            
+          ],
+        ),
     );
   }
 
@@ -68,20 +89,14 @@ Widget build(BuildContext context) {
 
 The constructor has 17 attributes related to the API:
 
-- `List<DotNavigationBarIteam> items` 
-- `Color activeColor` Icons  Active Color.
-- `Color dotColor`The Color of dot indicater.
-- `Color color` Icons Main Colors.
-- `double paddingL` Container Padding Left. Default value is `1`.
-- `double paddingT`Container Padding Top. Default value is `1`.
-- `double paddingR` Container Padding Right. Default value is `1`.
-- `double paddingB`Container Padding Bottom. Default value is `1`.
-- `double paddingV` symmetric vertical Padding of the Container. Default value is `25`.
-- `double topLeft` Container Top Left corner radius . Default value is `10`.
-- `double topRight`Container Top right corner radius . Default value is `10`.
-- `double bottomLeft` Container bottom Left corner radius . Default value is `0`.
-- `double bottomRight`Container bottom right corner radius . Default value is `0`.
-- `double materialElevation` Containers elevation
-- `Color backgroundColor`Background color. Default value is `white`.
-- `Color backgroundShadowColor` Background shadow color . Default value is `grey`.
-- `double bottomRight`Background shadow color . Default value is `grey`.
+- `items`: A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
+- `currentIndex`: The tab to display.
+- `onTap`:Returns the index of the tab that was tapped.
+- `selectedItemColor`:The color of the icon and text when the item is selected.
+- `unselectedItemColor`: The color of the icon and text when the item is not selected.
+- `margin`:A convenience field for the margin surrounding the entire widget.
+- `itemPadding`:The padding of each item.
+- `duration`: The transition duration.
+- `curve`: The transition curve.
+- `dotIndicatorColor`:The color of the Dot indicator.
+
