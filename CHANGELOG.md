@@ -8,3 +8,5 @@
 * complex animation
 * Can customize animation curves 
 * And a lot more ....
+## [0.2.0] - Add release date.
+* Migrate to null-safety.
