@@ -1,5 +1,6 @@
 # Dot Navigation Bar
-![version](https://img.shields.io/badge/version-0.1.1-blue.svg) 
+![version](https://img.shields.io/badge/version-0.2.0-blue.svg) 
+[![Latest compatibility result for Stable channel](https://img.shields.io/endpoint?url=https://pub.green/packages/bottom_navy_bar/badge?channel=stable)]
 
 A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar with simple smooth animations, providing a nice and clean UI/UX.
 
@@ -100,3 +101,5 @@ The constructor has 17 attributes related to the API:
 - `curve`: The transition curve.
 - `dotIndicatorColor`:The color of the Dot indicator.
 
+## Contributors
+@iamvivekkaushik
