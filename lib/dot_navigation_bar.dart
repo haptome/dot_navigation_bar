@@ -67,12 +67,17 @@ class DotNavigationBar extends StatelessWidget {
                 curve: curve,
                 duration: duration,
                 builder: (context, t, _) {
-                  final _selectedColor = item.selectedColor ?? selectedItemColor ?? theme.primaryColor;
+                  final _selectedColor = item.selectedColor ??
+                      selectedItemColor ??
+                      theme.primaryColor;
 
-                  final _unselectedColor = item.unselectedColor ?? unselectedItemColor ?? theme.iconTheme.color;
+                  final _unselectedColor = item.unselectedColor ??
+                      unselectedItemColor ??
+                      theme.iconTheme.color;
 
                   return Material(
-                    color: Color.lerp(Colors.transparent, Colors.transparent, t),
+                    color:
+                        Color.lerp(Colors.transparent, Colors.transparent, t),
                     child: InkWell(
                       onTap: () => onTap?.call(items.indexOf(item)),
                       focusColor: _selectedColor.withOpacity(0.1),
@@ -81,12 +86,14 @@ class DotNavigationBar extends StatelessWidget {
                       hoverColor: _selectedColor.withOpacity(0.1),
                       child: Stack(children: <Widget>[
                         Padding(
-                          padding: itemPadding - EdgeInsets.only(right: itemPadding.right * t),
+                          padding: itemPadding -
+                              EdgeInsets.only(right: itemPadding.right * t),
                           child: Row(
                             children: [
                               IconTheme(
                                 data: IconThemeData(
-                                  color: Color.lerp(_unselectedColor, _selectedColor, t),
+                                  color: Color.lerp(
+                                      _unselectedColor, _selectedColor, t),
                                   size: 24,
                                 ),
                                 child: item.icon,
@@ -101,13 +108,22 @@ class DotNavigationBar extends StatelessWidget {
                               alignment: Alignment.bottomCenter,
                               widthFactor: t,
                               child: Padding(
-                                padding: EdgeInsets.only(left: itemPadding.right / 0.63, right: itemPadding.right),
+                                padding: EdgeInsets.only(
+                                    left: itemPadding.right / 0.63,
+                                    right: itemPadding.right),
                                 child: DefaultTextStyle(
                                   style: TextStyle(
-                                    color: Color.lerp(_selectedColor.withOpacity(0.0), _selectedColor, t),
+                                    color: Color.lerp(
+                                        _selectedColor.withOpacity(0.0),
+                                        _selectedColor,
+                                        t),
                                     fontWeight: FontWeight.w600,
                                   ),
-                                  child: CircleAvatar(radius: 2.5, backgroundColor: dotIndicatorColor != null ? dotIndicatorColor : _selectedColor),
+                                  child: CircleAvatar(
+                                      radius: 2.5,
+                                      backgroundColor: dotIndicatorColor != null
+                                          ? dotIndicatorColor
+                                          : _selectedColor),
                                 ),
                               ),
                             ),
