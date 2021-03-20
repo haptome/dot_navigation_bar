@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 class DotNavigationBar extends StatelessWidget {
   DotNavigationBar({
-    Key key,
-    @required this.items,
+    Key? key,
+    required this.items,
     this.currentIndex = 0,
     this.onTap,
     this.selectedItemColor,
@@ -24,13 +24,13 @@ class DotNavigationBar extends StatelessWidget {
   final int currentIndex;
 
   /// Returns the index of the tab that was tapped.
-  final Function(int) onTap;
+  final Function(int)? onTap;
 
   /// The color of the icon and text when the item is selected.
-  final Color selectedItemColor;
+  final Color? selectedItemColor;
 
   /// The color of the icon and text when the item is not selected.
-  final Color unselectedItemColor;
+  final Color? unselectedItemColor;
 
   /// A convenience field for the margin surrounding the entire widget.
   final EdgeInsets margin;
@@ -45,7 +45,7 @@ class DotNavigationBar extends StatelessWidget {
   final Curve curve;
 
   /// The color of the Dot indicator.
-  final Color dotIndicatorColor;
+  final Color? dotIndicatorColor;
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,7 @@ class DotNavigationBar extends StatelessWidget {
                                   color: Color.lerp(_unselectedColor, _selectedColor, t),
                                   size: 24,
                                 ),
-                                child: item.icon ?? SizedBox.shrink(),
+                                child: item.icon,
                               ),
                             ],
                           ),
@@ -131,14 +131,14 @@ class DotNavigationBarItem {
   final Widget icon;
 
   /// A primary color to use for this tab.
-  final Color selectedColor;
+  final Color? selectedColor;
 
   /// The color to display when this tab is not selected.
-  final Color unselectedColor;
+  final Color? unselectedColor;
 
   DotNavigationBarItem({
-    @required this.icon,
+    required this.icon,
     this.selectedColor,
     this.unselectedColor,
-  }) : assert(icon != null, "Every DotNavigationBarItem requires an icon.");
+  });
 }
