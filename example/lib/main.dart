@@ -69,7 +69,7 @@ class _HomeState extends State<Home> {
           /// Profile
           DotNavigationBarItem(
             icon: Icon(Icons.person),
-             selectedColor: Color(0xff73544C),
+            selectedColor: Color(0xff73544C),
           ),
         ],
       ),
