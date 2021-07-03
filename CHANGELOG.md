@@ -10,3 +10,7 @@
 * And a lot more ....
 ## [0.2.0] - Add release date.
 * Migrate to null-safety.
+# [1.0.0] - Add release date.
+* Rounded nav bar
+* Doc improved
+* Floating nav bar
