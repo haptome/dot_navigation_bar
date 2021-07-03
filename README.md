@@ -1,12 +1,38 @@
-# Dot Navigation Bar
-![version](https://img.shields.io/badge/version-0.2.0-blue.svg) 
-![Latest compatibility result for Stable channel](https://img.shields.io/endpoint?url=https://pub.green/packages/bottom_navy_bar/badge?channel=stable)
+                                       Dot Navigation Bar
+
+ <p align="center">
+  
+ <img src="https://img.shields.io/badge/Maintained%3F-Yes-green?style=for-the-badge">
+  <br>
+  <a href="#" target="_blank"><img alt="undefined" src="https://badgen.net/pub/flutter-platform/dot_navigation_bar"></a>
+  <a href="#" target="_blank"><img alt="undefined" src="https://badgen.net/pub/sdk-version/dot_navigation_bar"></a>
+  <br>
+  <a href="#" target="_blank"><img alt="undefined" src="https://badgen.net/pub/v/dot_navigation_bar"></a>
+  <a href="#" target="_blank"><img alt="undefined" src="https://badgen.net/pub/license/dot_navigation_bar"></a>
+  <a href="#" target="_blank"><img alt="undefined" src="https://badgen.net/pub/likes/dot_navigation_bar"></a>
+  <a href="#" target="_blank"><img alt="undefined" src="https://badgen.net/pub/points/dot_navigation_bar"></a>
+  <a href="#" target="_blank"><img alt="undefined" src="https://badgen.net/pub/popularity/dot_navigation_bar"></a>
+  <br>
+  <a href="#"><img alt="undefined" src="https://img.shields.io/github/license/GitSquared/edex-ui.svg?style=popout"></a>
+  <a href="#" target="_blank"><img alt="undefined" src="https://badgen.net//github/stars/haptome/dot_navigation_bar"></a>
+  
+ 
+  <br>
+ 
+
+</p>
+
+
 
 A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar with simple smooth animations, providing a nice and clean UI/UX.
 
- ![style1](github-assets/Screen-Recording.gif)
- <img src="github-assets/Screen-Shot.png" alt="preview" width="300"/> 
-
+ ![style1](github-assets/ScreenShot.png)
+ 
+ NEW
+___ 
+  + Round nav bar
+  + Example file
+  + Floating nav bar
 
 
 ## Getting Started
@@ -27,10 +53,18 @@ import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 
  call `DotNavigationBar`'s constructor:
 
+# If you want to show body behind the navbar, it should be true
+          extendBody: true,
+  if you are not intersted inmaking round nav bar with show body behind the navbar
+  you have to make that
+
+          extendBody: false,
+
 ```dart
 Widget build(BuildContext context) {
   return Scaffold(
     body: Center(),
+    extendBody: true,//<------like this 
     bottomNavigationBar:  DotNavigationBar(
           currentIndex: _SelectedTab.values.indexOf(_selectedTab),
           onTap: _handleIndexChanged,
@@ -88,7 +122,7 @@ Widget build(BuildContext context) {
 
 ```
 
-The constructor has 17 attributes related to the API:
+The constructor has 14 attributes related to the Widget:
 
 - `items`: A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
 - `currentIndex`: The tab to display.
@@ -100,6 +134,23 @@ The constructor has 17 attributes related to the API:
 - `duration`: The transition duration.
 - `curve`: The transition curve.
 - `dotIndicatorColor`:The color of the Dot indicator.
+- `marginR`:margin for the bar to give some radius .
+- `paddingR`:padding for the bar to give some radius.
+- `borderRadius`:border radius for nav bar.
+- `backgroundColor`:bgd colors for the nav bar.
+
+## default values
+ marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+ 
+ paddingR = const EdgeInsets.only(bottom: 5, top: 10),
+
+borderRadius = 30,
+
+backgroundColor =  Colors.white,
 
 ## Contributors
 @iamvivekkaushik
+ 
+   
+
+
