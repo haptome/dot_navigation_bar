@@ -33,6 +33,7 @@ ___
   + Round nav bar
   + Example file
   + Floating nav bar
+  + shadow to Floating nav bar
 
 
 ## Getting Started
@@ -122,7 +123,7 @@ Widget build(BuildContext context) {
 
 ```
 
-The constructor has 14 attributes related to the Widget:
+The constructor has 15 attributes related to the Widget:
 
 - `items`: A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
 - `currentIndex`: The tab to display.
@@ -138,6 +139,7 @@ The constructor has 14 attributes related to the Widget:
 - `paddingR`:padding for the bar to give some radius.
 - `borderRadius`:border radius for nav bar.
 - `backgroundColor`:bgd colors for the nav bar.
+- `boxShadow`: floating nav bar shadow ,it takes `List of BoxShadow`
 
 ## default values
  marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
