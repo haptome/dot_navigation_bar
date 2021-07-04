@@ -19,6 +19,14 @@ class DotNavigationBar extends StatelessWidget {
     this.paddingR = const EdgeInsets.only(bottom: 5, top: 10),
     this.borderRadius = 30,
     this.backgroundColor = Colors.white,
+    this.boxShadow = const [
+      BoxShadow(
+        color: Colors.transparent,
+        spreadRadius: 0,
+        blurRadius: 0,
+        offset: Offset(0, 0), // changes position of shadow
+      ),
+    ],
   }) : super(key: key);
 
   /// A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
@@ -63,6 +71,9 @@ class DotNavigationBar extends StatelessWidget {
   ///bgd colors for the nav bar
   final Color? backgroundColor;
 
+  /// List of box shadow
+  final List<BoxShadow> boxShadow;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -80,6 +91,7 @@ class DotNavigationBar extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(borderRadius!),
                 color: backgroundColor,
+                boxShadow: boxShadow,
               ),
               width: double.infinity,
               child: Padding(
