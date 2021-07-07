@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 
 import 'DotNavigationBarItem.dart';
+
 class Body extends StatelessWidget {
   const Body({
     Key? key,
@@ -41,17 +42,15 @@ class Body extends StatelessWidget {
             curve: curve,
             duration: duration,
             builder: (context, t, _) {
-              final _selectedColor = item.selectedColor ??
-                  selectedItemColor ??
-                  theme.primaryColor;
+              final _selectedColor =
+                  item.selectedColor ?? selectedItemColor ?? theme.primaryColor;
 
               final _unselectedColor = item.unselectedColor ??
                   unselectedItemColor ??
                   theme.iconTheme.color;
 
               return Material(
-                color: Color.lerp(
-                    Colors.transparent, Colors.transparent, t),
+                color: Color.lerp(Colors.transparent, Colors.transparent, t),
                 child: InkWell(
                   onTap: () => onTap.call(items.indexOf(item)),
                   focusColor: _selectedColor.withOpacity(0.1),
@@ -61,14 +60,13 @@ class Body extends StatelessWidget {
                   child: Stack(children: <Widget>[
                     Padding(
                       padding: itemPadding -
-                          EdgeInsets.only(
-                              right: itemPadding.right * t),
+                          EdgeInsets.only(right: itemPadding.right * t),
                       child: Row(
                         children: [
                           IconTheme(
                             data: IconThemeData(
-                              color: Color.lerp(_unselectedColor,
-                                  _selectedColor, t),
+                              color: Color.lerp(
+                                  _unselectedColor, _selectedColor, t),
                               size: 24,
                             ),
                             child: item.icon,
@@ -96,10 +94,9 @@ class Body extends StatelessWidget {
                               ),
                               child: CircleAvatar(
                                   radius: 2.5,
-                                  backgroundColor:
-                                      dotIndicatorColor != null
-                                          ? dotIndicatorColor
-                                          : _selectedColor),
+                                  backgroundColor: dotIndicatorColor != null
+                                      ? dotIndicatorColor
+                                      : _selectedColor),
                             ),
                           ),
                         ),
