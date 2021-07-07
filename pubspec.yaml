@@ -1,7 +1,7 @@
 name: dot_navigation_bar
 description: Simple smooth animations, providing a nice and cleanUI/UX Bottom Nav Bar.
-version: 1.0.1+1
-# author: Haptome <haptomee@gmail.com>
+version: 1.0.1+2
+author: Haptome <haptomee@icloud.com>
 homepage: https://github.com/haptome/dot_navigation_bar
 
 environment:
