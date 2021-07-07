@@ -40,11 +40,10 @@ class _HomeState extends State<Home> {
     return Scaffold(
       extendBody: true,
       body: Container(
-        
         child: Image.asset("lib/img/1.png"),
       ),
       bottomNavigationBar: Padding(
-         padding: EdgeInsets.only(bottom: 10),
+        padding: EdgeInsets.only(bottom: 10),
         child: DotNavigationBar(
           margin: EdgeInsets.only(left: 10, right: 10),
           currentIndex: _SelectedTab.values.indexOf(_selectedTab),
