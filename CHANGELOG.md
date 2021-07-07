@@ -17,3 +17,6 @@
 # [1.0.1+1] - Add release date.
 * minor fix
 * add some shadow to the Floating nav bar
+# [1.0.1+2] - Add release date.
+* minor fix
+
