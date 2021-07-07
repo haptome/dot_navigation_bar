@@ -70,6 +70,7 @@ Widget build(BuildContext context) {
           currentIndex: _SelectedTab.values.indexOf(_selectedTab),
           onTap: _handleIndexChanged,
           dotIndicatorColor: Colors.black,
+          // enableFloatingNavBar: false
           items: [
             
             
@@ -123,7 +124,7 @@ Widget build(BuildContext context) {
 
 ```
 
-The constructor has 15 attributes related to the Widget:
+The constructor has 16 attributes related to the Widget:
 
 - `items`: A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
 - `currentIndex`: The tab to display.
@@ -140,6 +141,7 @@ The constructor has 15 attributes related to the Widget:
 - `borderRadius`:border radius for nav bar.
 - `backgroundColor`:bgd colors for the nav bar.
 - `boxShadow`: floating nav bar shadow ,it takes `List of BoxShadow`
+- `enableFloatingNavBar`: make Floating nav bar enabled.
 
 ## default values
  marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
@@ -149,6 +151,7 @@ The constructor has 15 attributes related to the Widget:
 borderRadius = 30,
 
 backgroundColor =  Colors.white,
+enableFloatingNavBar=true,
 
 ## Contributors
 @iamvivekkaushik
