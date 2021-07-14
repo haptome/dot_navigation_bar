@@ -1,4 +1,4 @@
-                                       Dot Navigation Bar
+ <h1 align="center">  Dot Navigation Bar</h1>
 
  <p align="center">
   
