@@ -27,7 +27,8 @@
 A bottom navigation bar that you can customize with the options you need, without any limits. You can also customize the appearance of the navigation bar with simple smooth animations, providing a nice and clean UI/UX.
 
  ![style1](github-assets/ScreenShot.png)
- 
+[Example flutter project](https://github.com/haptome/watchs)
+___
  NEW
 ___ 
   + Round nav bar
