@@ -12,8 +12,7 @@ class DotNavigationBar extends StatelessWidget {
       this.selectedItemColor,
       this.unselectedItemColor,
       this.margin = const EdgeInsets.all(8),
-      this.itemPadding =
-          const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+      this.itemPadding = const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
       this.duration = const Duration(milliseconds: 500),
       this.curve = Curves.easeOutQuint,
       this.dotIndicatorColor,
@@ -29,7 +28,8 @@ class DotNavigationBar extends StatelessWidget {
           offset: Offset(0, 0), // changes position of shadow
         ),
       ],
-      this.enableFloatingNavBar = true})
+      this.enableFloatingNavBar = true,
+      this.enablePaddingAnimation = true})
       : super(key: key);
 
   /// A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
@@ -77,6 +77,7 @@ class DotNavigationBar extends StatelessWidget {
   /// List of box shadow
   final List<BoxShadow> boxShadow;
   final bool enableFloatingNavBar;
+  final bool enablePaddingAnimation;
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +112,8 @@ class DotNavigationBar extends StatelessWidget {
                           unselectedItemColor: unselectedItemColor,
                           onTap: onTap!,
                           itemPadding: itemPadding,
-                          dotIndicatorColor: dotIndicatorColor),
+                          dotIndicatorColor: dotIndicatorColor,
+                          enablePaddingAnimation: enablePaddingAnimation),
                     ),
                   ),
                 ),
@@ -133,7 +135,8 @@ class DotNavigationBar extends StatelessWidget {
                   unselectedItemColor: unselectedItemColor,
                   onTap: onTap!,
                   itemPadding: itemPadding,
-                  dotIndicatorColor: dotIndicatorColor),
+                  dotIndicatorColor: dotIndicatorColor,
+                  enablePaddingAnimation: enablePaddingAnimation),
             ),
           );
   }
