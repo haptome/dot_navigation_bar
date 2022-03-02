@@ -19,4 +19,6 @@
 * add some shadow to the Floating nav bar
 # [1.0.1+3] - Add release date.
 * minor fix
+# [1.0.1+4] - Add release date.
+*Padding Animation
 
