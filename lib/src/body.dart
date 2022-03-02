@@ -16,6 +16,7 @@ class Body extends StatelessWidget {
     required this.onTap,
     required this.itemPadding,
     required this.dotIndicatorColor,
+    required this.enablePaddingAnimation,
   }) : super(key: key);
 
   final List<DotNavigationBarItem> items;
@@ -28,6 +29,7 @@ class Body extends StatelessWidget {
   final Function(int p1) onTap;
   final EdgeInsets itemPadding;
   final Color? dotIndicatorColor;
+  final bool enablePaddingAnimation;
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +61,9 @@ class Body extends StatelessWidget {
                   hoverColor: _selectedColor.withOpacity(0.1),
                   child: Stack(children: <Widget>[
                     Padding(
-                      padding: itemPadding -
-                          EdgeInsets.only(right: itemPadding.right * t),
+                      padding: itemPadding - (enablePaddingAnimation 
+                          ? EdgeInsets.only(right: itemPadding.right * t) 
+                          : EdgeInsets.zero),
                       child: Row(
                         children: [
                           IconTheme(
