@@ -125,7 +125,7 @@ Widget build(BuildContext context) {
 
 ```
 
-The constructor has 16 attributes related to the Widget:
+The constructor has 17 attributes related to the Widget:
 
 - `items`: A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
 - `currentIndex`: The tab to display.
@@ -143,6 +143,7 @@ The constructor has 16 attributes related to the Widget:
 - `backgroundColor`:bgd colors for the nav bar.
 - `boxShadow`: floating nav bar shadow ,it takes `List of BoxShadow`
 - `enableFloatingNavBar`: make Floating nav bar enabled.
+- `enablePaddingAnimation`: enable the animation on item during item change.
 
 ## default values
  marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
@@ -153,6 +154,7 @@ borderRadius = 30,
 
 backgroundColor =  Colors.white,
 enableFloatingNavBar=true,
+enablePaddingAnimation=true
 
 ## Contributors
 @iamvivekkaushik
