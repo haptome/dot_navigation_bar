@@ -53,6 +53,8 @@ class Body extends StatelessWidget {
 
               return Material(
                 color: Color.lerp(Colors.transparent, Colors.transparent, t),
+                borderRadius: BorderRadius.circular(8),
+                clipBehavior: Clip.antiAlias,
                 child: InkWell(
                   onTap: () => onTap.call(items.indexOf(item)),
                   focusColor: _selectedColor.withOpacity(0.1),
