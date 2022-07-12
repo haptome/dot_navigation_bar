@@ -4,33 +4,34 @@ import 'package:flutter/material.dart';
 import 'DotNavigationBarItem.dart';
 
 class DotNavigationBar extends StatelessWidget {
-  DotNavigationBar(
-      {Key? key,
-      required this.items,
-      this.currentIndex = 0,
-      this.onTap,
-      this.selectedItemColor,
-      this.unselectedItemColor,
-      this.margin = const EdgeInsets.all(8),
-      this.itemPadding = const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-      this.duration = const Duration(milliseconds: 500),
-      this.curve = Curves.easeOutQuint,
-      this.dotIndicatorColor,
-      this.marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-      this.paddingR = const EdgeInsets.only(bottom: 5, top: 10),
-      this.borderRadius = 30,
-      this.backgroundColor = Colors.white,
-      this.boxShadow = const [
-        BoxShadow(
-          color: Colors.transparent,
-          spreadRadius: 0,
-          blurRadius: 0,
-          offset: Offset(0, 0), // changes position of shadow
-        ),
-      ],
-      this.enableFloatingNavBar = true,
-      this.enablePaddingAnimation = true})
-      : super(key: key);
+  const DotNavigationBar({
+    Key? key,
+    required this.items,
+    this.currentIndex = 0,
+    this.onTap,
+    this.selectedItemColor,
+    this.unselectedItemColor,
+    this.margin = const EdgeInsets.all(8),
+    this.itemPadding = const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+    this.duration = const Duration(milliseconds: 500),
+    this.curve = Curves.easeOutQuint,
+    this.dotIndicatorColor,
+    this.marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+    this.paddingR = const EdgeInsets.only(bottom: 5, top: 10),
+    this.borderRadius = 30,
+    this.backgroundColor = Colors.white,
+    this.boxShadow = const [
+      BoxShadow(
+        color: Colors.transparent,
+        spreadRadius: 0,
+        blurRadius: 0,
+        offset: Offset(0, 0), // changes position of shadow
+      ),
+    ],
+    this.enableFloatingNavBar = true,
+    this.enablePaddingAnimation = true,
+    this.splashColor,
+  }) : super(key: key);
 
   /// A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
   final List<DotNavigationBarItem> items;
@@ -79,6 +80,11 @@ class DotNavigationBar extends StatelessWidget {
   final bool enableFloatingNavBar;
   final bool enablePaddingAnimation;
 
+  /// Color of the item's Splash Color
+  ///
+  /// To disable, use `Colors.transparent`
+  final Color? splashColor;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -113,7 +119,8 @@ class DotNavigationBar extends StatelessWidget {
                           onTap: onTap!,
                           itemPadding: itemPadding,
                           dotIndicatorColor: dotIndicatorColor,
-                          enablePaddingAnimation: enablePaddingAnimation),
+                          enablePaddingAnimation: enablePaddingAnimation,
+                          splashColor: splashColor),
                     ),
                   ),
                 ),
@@ -136,7 +143,8 @@ class DotNavigationBar extends StatelessWidget {
                   onTap: onTap!,
                   itemPadding: itemPadding,
                   dotIndicatorColor: dotIndicatorColor,
-                  enablePaddingAnimation: enablePaddingAnimation),
+                  enablePaddingAnimation: enablePaddingAnimation,
+                  splashColor: splashColor),
             ),
           );
   }
