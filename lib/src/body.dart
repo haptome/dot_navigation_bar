@@ -17,6 +17,7 @@ class Body extends StatelessWidget {
     required this.itemPadding,
     required this.dotIndicatorColor,
     required this.enablePaddingAnimation,
+    this.splashBorderRadius,
     this.splashColor,
   }) : super(key: key);
 
@@ -32,7 +33,7 @@ class Body extends StatelessWidget {
   final Color? dotIndicatorColor;
   final bool enablePaddingAnimation;
   final Color? splashColor;
-
+  final double? splashBorderRadius;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -52,7 +53,7 @@ class Body extends StatelessWidget {
 
               return Material(
                 color: Color.lerp(Colors.transparent, Colors.transparent, t),
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: BorderRadius.circular(splashBorderRadius??8),
                 clipBehavior: Clip.antiAlias,
                 child: InkWell(
                   onTap: () => onTap.call(items.indexOf(item)),

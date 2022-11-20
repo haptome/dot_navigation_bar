@@ -1,11 +1,12 @@
 import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget{
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home> {
+class _HomeState extends State<Home>  with TickerProviderStateMixin {
   var _selectedTab = _SelectedTab.home;
 
   void _handleIndexChanged(int i) {
@@ -37,6 +38,11 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    var anim = AnimationController(
+      vsync: this,
+      value: 1,
+      duration: const Duration(milliseconds: 500),
+    );
     return Scaffold(
       extendBody: true,
       body: Container(
@@ -49,6 +55,7 @@ class _HomeState extends State<Home> {
           currentIndex: _SelectedTab.values.indexOf(_selectedTab),
           dotIndicatorColor: Colors.white,
           unselectedItemColor: Colors.grey[300],
+          splashBorderRadius: 50,
           // enableFloatingNavBar: false,
           onTap: _handleIndexChanged,
           items: [
