@@ -5,7 +5,7 @@ import 'DotNavigationBarItem.dart';
 
 class DotNavigationBar extends StatelessWidget {
   const DotNavigationBar({
-    Key? key,
+    super.key,
     required this.items,
     this.currentIndex = 0,
     this.onTap,
@@ -31,7 +31,7 @@ class DotNavigationBar extends StatelessWidget {
     this.enableFloatingNavBar = true,
     this.enablePaddingAnimation = true,
     this.splashColor,
-  }) : super(key: key);
+  });
 
   /// A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
   final List<DotNavigationBarItem> items;
@@ -109,18 +109,19 @@ class DotNavigationBar extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Body(
-                          items: items,
-                          currentIndex: currentIndex,
-                          curve: curve,
-                          duration: duration,
-                          selectedItemColor: selectedItemColor,
-                          theme: theme,
-                          unselectedItemColor: unselectedItemColor,
-                          onTap: onTap!,
-                          itemPadding: itemPadding,
-                          dotIndicatorColor: dotIndicatorColor,
-                          enablePaddingAnimation: enablePaddingAnimation,
-                          splashColor: splashColor),
+                        items: items,
+                        currentIndex: currentIndex,
+                        curve: curve,
+                        duration: duration,
+                        selectedItemColor: selectedItemColor,
+                        theme: theme,
+                        unselectedItemColor: unselectedItemColor,
+                        onTap: onTap!,
+                        itemPadding: itemPadding,
+                        dotIndicatorColor: dotIndicatorColor,
+                        enablePaddingAnimation: enablePaddingAnimation,
+                        splashColor: splashColor,
+                      ),
                     ),
                   ),
                 ),
@@ -133,18 +134,19 @@ class DotNavigationBar extends StatelessWidget {
             child: Padding(
               padding: margin,
               child: Body(
-                  items: items,
-                  currentIndex: currentIndex,
-                  curve: curve,
-                  duration: duration,
-                  selectedItemColor: selectedItemColor,
-                  theme: theme,
-                  unselectedItemColor: unselectedItemColor,
-                  onTap: onTap!,
-                  itemPadding: itemPadding,
-                  dotIndicatorColor: dotIndicatorColor,
-                  enablePaddingAnimation: enablePaddingAnimation,
-                  splashColor: splashColor),
+                items: items,
+                currentIndex: currentIndex,
+                curve: curve,
+                duration: duration,
+                selectedItemColor: selectedItemColor,
+                theme: theme,
+                unselectedItemColor: unselectedItemColor,
+                onTap: onTap!,
+                itemPadding: itemPadding,
+                dotIndicatorColor: dotIndicatorColor,
+                enablePaddingAnimation: enablePaddingAnimation,
+                splashColor: splashColor,
+              ),
             ),
           );
   }
