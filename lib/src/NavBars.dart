@@ -19,6 +19,7 @@ class DotNavigationBar extends StatelessWidget {
     this.marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
     this.paddingR = const EdgeInsets.only(bottom: 5, top: 10),
     this.borderRadius = 30,
+    this.splashBorderRadius,
     this.backgroundColor = Colors.white,
     this.boxShadow = const [
       BoxShadow(
@@ -85,6 +86,10 @@ class DotNavigationBar extends StatelessWidget {
   /// To disable, use `Colors.transparent`
   final Color? splashColor;
 
+  /// Color of the item's Splash Color
+  ///
+  /// To disable, use `Colors.transparent`
+  final double? splashBorderRadius;
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
@@ -120,7 +125,8 @@ class DotNavigationBar extends StatelessWidget {
                           itemPadding: itemPadding,
                           dotIndicatorColor: dotIndicatorColor,
                           enablePaddingAnimation: enablePaddingAnimation,
-                          splashColor: splashColor),
+                          splashColor: splashColor,
+                          splashBorderRadius:splashBorderRadius),
                     ),
                   ),
                 ),
@@ -144,7 +150,8 @@ class DotNavigationBar extends StatelessWidget {
                   itemPadding: itemPadding,
                   dotIndicatorColor: dotIndicatorColor,
                   enablePaddingAnimation: enablePaddingAnimation,
-                  splashColor: splashColor),
+                  splashColor: splashColor,
+                  splashBorderRadius:splashBorderRadius),
             ),
           );
   }
