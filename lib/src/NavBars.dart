@@ -5,7 +5,7 @@ import 'DotNavigationBarItem.dart';
 
 class DotNavigationBar extends StatelessWidget {
   const DotNavigationBar({
-    Key? key,
+    super.key,
     required this.items,
     this.currentIndex = 0,
     this.onTap,
@@ -32,7 +32,7 @@ class DotNavigationBar extends StatelessWidget {
     this.enableFloatingNavBar = true,
     this.enablePaddingAnimation = true,
     this.splashColor,
-  }) : super(key: key);
+  });
 
   /// A list of tabs to display, ie `Home`, `Profile`,`Cart`, etc
   final List<DotNavigationBarItem> items;

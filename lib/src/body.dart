@@ -5,7 +5,7 @@ import 'DotNavigationBarItem.dart';
 
 class Body extends StatelessWidget {
   const Body({
-    Key? key,
+    super.key,
     required this.items,
     required this.currentIndex,
     required this.curve,
@@ -19,7 +19,7 @@ class Body extends StatelessWidget {
     required this.enablePaddingAnimation,
     this.splashBorderRadius,
     this.splashColor,
-  }) : super(key: key);
+  });
 
   final List<DotNavigationBarItem> items;
   final int currentIndex;
@@ -28,7 +28,7 @@ class Body extends StatelessWidget {
   final Color? selectedItemColor;
   final ThemeData theme;
   final Color? unselectedItemColor;
-  final Function(int p1) onTap;
+  final Function(int index) onTap;
   final EdgeInsets itemPadding;
   final Color? dotIndicatorColor;
   final bool enablePaddingAnimation;
@@ -47,9 +47,12 @@ class Body extends StatelessWidget {
             curve: curve,
             duration: duration,
             builder: (context, t, _) {
-              final _selectedColor = item.selectedColor ?? selectedItemColor ?? theme.primaryColor;
+              final _selectedColor =
+                  item.selectedColor ?? selectedItemColor ?? theme.primaryColor;
 
-              final _unselectedColor = item.unselectedColor ?? unselectedItemColor ?? theme.iconTheme.color;
+              final _unselectedColor = item.unselectedColor ??
+                  unselectedItemColor ??
+                  theme.iconTheme.color;
 
               return Material(
                 color: Color.lerp(Colors.transparent, Colors.transparent, t),
@@ -58,18 +61,22 @@ class Body extends StatelessWidget {
                 child: InkWell(
                   onTap: () => onTap.call(items.indexOf(item)),
                   focusColor: splashColor ?? _selectedColor.withOpacity(0.1),
-                  highlightColor: splashColor ?? _selectedColor.withOpacity(0.1),
+                  highlightColor:
+                      splashColor ?? _selectedColor.withOpacity(0.1),
                   splashColor: splashColor ?? _selectedColor.withOpacity(0.1),
                   hoverColor: splashColor ?? _selectedColor.withOpacity(0.1),
                   child: Stack(children: <Widget>[
                     Padding(
                       padding: itemPadding -
-                          (enablePaddingAnimation ? EdgeInsets.only(right: itemPadding.right * t) : EdgeInsets.zero),
+                          (enablePaddingAnimation
+                              ? EdgeInsets.only(right: itemPadding.right * t)
+                              : EdgeInsets.zero),
                       child: Row(
                         children: [
                           IconTheme(
                             data: IconThemeData(
-                              color: Color.lerp(_unselectedColor, _selectedColor, t),
+                              color: Color.lerp(
+                                  _unselectedColor, _selectedColor, t),
                               size: 24,
                             ),
                             child: item.icon,
@@ -84,15 +91,22 @@ class Body extends StatelessWidget {
                           alignment: Alignment.bottomCenter,
                           widthFactor: t,
                           child: Padding(
-                            padding: EdgeInsets.only(left: itemPadding.right / 0.63, right: itemPadding.right),
+                            padding: EdgeInsetsDirectional.only(
+                                start: itemPadding.right / 0.63,
+                                end: itemPadding.right),
                             child: DefaultTextStyle(
                               style: TextStyle(
-                                color: Color.lerp(_selectedColor.withOpacity(0.0), _selectedColor, t),
+                                color: Color.lerp(
+                                    _selectedColor.withOpacity(0.0),
+                                    _selectedColor,
+                                    t),
                                 fontWeight: FontWeight.w600,
                               ),
                               child: CircleAvatar(
                                   radius: 2.5,
-                                  backgroundColor: dotIndicatorColor != null ? dotIndicatorColor : _selectedColor),
+                                  backgroundColor: dotIndicatorColor != null
+                                      ? dotIndicatorColor
+                                      : _selectedColor),
                             ),
                           ),
                         ),
