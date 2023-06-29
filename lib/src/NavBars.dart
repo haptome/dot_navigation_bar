@@ -126,7 +126,7 @@ class DotNavigationBar extends StatelessWidget {
                           dotIndicatorColor: dotIndicatorColor,
                           enablePaddingAnimation: enablePaddingAnimation,
                           splashColor: splashColor,
-                          splashBorderRadius:splashBorderRadius),
+                          splashBorderRadius: splashBorderRadius),
                     ),
                   ),
                 ),
@@ -151,7 +151,7 @@ class DotNavigationBar extends StatelessWidget {
                   dotIndicatorColor: dotIndicatorColor,
                   enablePaddingAnimation: enablePaddingAnimation,
                   splashColor: splashColor,
-                  splashBorderRadius:splashBorderRadius),
+                  splashBorderRadius: splashBorderRadius),
             ),
           );
   }

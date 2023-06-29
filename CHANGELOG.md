@@ -21,4 +21,8 @@
 * minor fix
 # [1.0.1+4] - Add release date.
 *Padding Animation
+# [1.0.2] - Add release date.
+*fix LTR dot padding issue and updated dart sdk
+*added splashBorderRadius
+
 
