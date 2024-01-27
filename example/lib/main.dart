@@ -27,63 +27,43 @@ class Home extends StatefulWidget {
   _HomeState createState() => _HomeState();
 }
 
-class _HomeState extends State<Home>  with TickerProviderStateMixin {
+class _HomeState extends State<Home> with TickerProviderStateMixin {
   var _selectedTab = _SelectedTab.home;
 
-  void _handleIndexChanged(int i) {
+  void _handleIndexChanged(int index) {
     setState(() {
-      _selectedTab = _SelectedTab.values[i];
+      _selectedTab = _SelectedTab.values[index];
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    var anim = AnimationController(
-      vsync: this,
-      value: 1,
-      duration: const Duration(milliseconds: 500),
-    );
     return Scaffold(
       extendBody: true,
       body: Container(
         child: Image.asset("lib/img/1.png"),
       ),
-      bottomNavigationBar: Padding(
-        padding: EdgeInsets.only(bottom: 10),
-        child: DotNavigationBar(
-          margin: EdgeInsets.only(left: 10, right: 10),
-          currentIndex: _SelectedTab.values.indexOf(_selectedTab),
-          dotIndicatorColor: Colors.white,
-          unselectedItemColor: Colors.grey[300],
-          splashBorderRadius: 50,
-          // enableFloatingNavBar: false,
-          onTap: _handleIndexChanged,
-          items: [
-            /// Home
-            DotNavigationBarItem(
-              icon: Icon(Icons.home),
-              selectedColor: Color(0xff73544C),
-            ),
-
-            /// Likes
-            DotNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              selectedColor: Color(0xff73544C),
-            ),
-
-            /// Search
-            DotNavigationBarItem(
-              icon: Icon(Icons.search),
-              selectedColor: Color(0xff73544C),
-            ),
-
-            /// Profile
-            DotNavigationBarItem(
-              icon: Icon(Icons.person),
-              selectedColor: Color(0xff73544C),
-            ),
-          ],
-        ),
+      bottomNavigationBar: DotNavigationBar(
+        currentIndex: _SelectedTab.values.indexOf(_selectedTab),
+        dotIndicatorColor: Color(0xff73544C),
+        selectedItemColor: Color(0xff73544C),
+        unselectedItemColor: Colors.grey[300],
+        splashBorderRadius: 50,
+        onTap: _handleIndexChanged,
+        items: [
+          DotNavigationBarItem(
+            icon: Icon(Icons.home),
+          ),
+          DotNavigationBarItem(
+            icon: Icon(Icons.favorite),
+          ),
+          DotNavigationBarItem(
+            icon: Icon(Icons.search),
+          ),
+          DotNavigationBarItem(
+            icon: Icon(Icons.person),
+          ),
+        ],
       ),
     );
   }
