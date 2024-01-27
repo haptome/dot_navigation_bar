@@ -12,12 +12,12 @@ class DotNavigationBar extends StatelessWidget {
     this.selectedItemColor,
     this.unselectedItemColor,
     this.margin = const EdgeInsets.all(8),
-    this.itemPadding = const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+    this.itemPadding = const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
     this.duration = const Duration(milliseconds: 500),
     this.curve = Curves.easeOutQuint,
     this.dotIndicatorColor,
-    this.marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-    this.paddingR = const EdgeInsets.only(bottom: 5, top: 10),
+    this.marginR,
+    this.paddingR,
     this.borderRadius = 30,
     this.splashBorderRadius,
     this.backgroundColor = Colors.white,
@@ -98,43 +98,39 @@ class DotNavigationBar extends StatelessWidget {
         ? BottomAppBar(
             color: Colors.transparent,
             elevation: 0,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Padding(
-                  padding: marginR!,
-                  child: Container(
-                    padding: paddingR,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(borderRadius!),
-                      color: backgroundColor,
-                      boxShadow: boxShadow,
-                    ),
-                    width: double.infinity,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: Body(
-                          items: items,
-                          currentIndex: currentIndex,
-                          curve: curve,
-                          duration: duration,
-                          selectedItemColor: selectedItemColor,
-                          theme: theme,
-                          unselectedItemColor: unselectedItemColor,
-                          onTap: onTap!,
-                          itemPadding: itemPadding,
-                          dotIndicatorColor: dotIndicatorColor,
-                          enablePaddingAnimation: enablePaddingAnimation,
-                          splashColor: splashColor,
-                          splashBorderRadius: splashBorderRadius),
-                    ),
+            child: Padding(
+              padding: marginR ?? EdgeInsets.zero,
+              child: Container(
+                padding: paddingR ?? EdgeInsets.zero,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(borderRadius!),
+                  color: backgroundColor,
+                  boxShadow: boxShadow,
+                ),
+                width: double.infinity,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                  child: Body(
+                    items: items,
+                    currentIndex: currentIndex,
+                    curve: curve,
+                    duration: duration,
+                    selectedItemColor: selectedItemColor,
+                    theme: theme,
+                    unselectedItemColor: unselectedItemColor,
+                    onTap: onTap!,
+                    itemPadding: itemPadding,
+                    dotIndicatorColor: dotIndicatorColor,
+                    enablePaddingAnimation: enablePaddingAnimation,
+                    splashColor: splashColor,
+                    splashBorderRadius: splashBorderRadius,
                   ),
                 ),
-              ],
+              ),
             ),
           )
         : Container(
-            padding: EdgeInsets.symmetric(vertical: 12),
+            padding: EdgeInsets.symmetric(vertical: 16),
             color: backgroundColor,
             child: Padding(
               padding: margin,
