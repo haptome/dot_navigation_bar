@@ -19,6 +19,7 @@ class DotNavigationBar extends StatelessWidget {
     this.marginR = const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
     this.paddingR = const EdgeInsets.only(bottom: 5, top: 10),
     this.borderRadius = 30,
+    this.barWidth = double.infinity,
     this.splashBorderRadius,
     this.backgroundColor = Colors.white,
     this.boxShadow = const [
@@ -73,6 +74,9 @@ class DotNavigationBar extends StatelessWidget {
   /// border radius
   final double? borderRadius;
 
+  /// bar width
+  final double? barWidth;
+
   ///bgd colors for the nav bar
   final Color? backgroundColor;
 
@@ -110,7 +114,7 @@ class DotNavigationBar extends StatelessWidget {
                       color: backgroundColor,
                       boxShadow: boxShadow,
                     ),
-                    width: double.infinity,
+                    width: barWidth,
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
                       child: Body(
